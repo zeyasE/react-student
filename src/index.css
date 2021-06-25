@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 800px;
+}
+
+/* .AddTodo{
+  display: flex;
+  justify-content: space-between;
+} */
