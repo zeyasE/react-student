@@ -1,7 +1,10 @@
 // import { connect } from "react-redux"
 import { useState } from "react"
+import { connect } from "react-redux"
+import { addStudent } from "../redux/actions"
+import { Button } from "react-bootstrap"
 
-const AddStudent = () => {
+const AddStudent = ({ addStudent }) => {
     const [name, setname] = useState('')
     const submitt = (e) => {
         e.preventDefault()
@@ -9,14 +12,17 @@ const AddStudent = () => {
             alert("Please full fill")
             return
         }
+        addStudent(name, new Date().getTime().toString())
         setname('')
     }
     return (
-        <div className="AddTodo">
-            <input type="text" onChange={e => setname(e.target.value)} value={name}></input>
-            <button type="submit" onClick={submitt}>Add</button>
-        </div>
+        <form>
+            <div className="AddStudent">
+                <input type="text" maxLength="8" onChange={e => setname(e.target.value)} value={name}></input>
+                <Button variant="outline-dark" type="submit" onClick={submitt}>Add</Button>
+            </div>
+        </form>
     )
 }
 
-export default AddStudent;
+export default connect(null, { addStudent })(AddStudent);

@@ -1,24 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AddStudent from "./components/AddStudent"
+import TableStudent from './components/TableStudent';
+import VisibilityFilter from './components/VIsibilityFilter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <h1>Students in Class</h1>
       <AddStudent />
+      <TableStudent />
+      <VisibilityFilter />
     </div>
   );
 }
